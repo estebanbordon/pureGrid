@@ -921,6 +921,7 @@ var pureGrid = {
 				{
 					tools.removeCss(this.table.rows[rowPos], 'selected');
 					this.table.rows[rowPos]._selected = false;
+					this.selectedRowIndexes[dataRowIndex] = false;
 				}
 				
 				// populate cells
@@ -1101,15 +1102,15 @@ var pureGrid = {
 		{
 			// clear all cell selections
 		    this.selectedCellIndexes = {};
-		
+			this.selectedRowIndexes = {};
 			// get data row position
-			var dataRowIndex = this.currentRowIndex + rowIndex;
-
-			if (this.selectedRowIndexes[dataRowIndex] === undefined)
-			{
+			//var dataRowIndex = this.currentRowIndex + rowIndex;
+			var dataRowIndex = rowIndex;
+			//if (this.selectedRowIndexes[dataRowIndex] === undefined)
+			//{
 			    this.selectedRowIndexes[dataRowIndex] = true;
-			    this.redraw();
-			}
+				this.redraw();
+			//}
 		},
 		
 		clearCellSelection : function()
