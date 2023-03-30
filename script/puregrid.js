@@ -1309,4 +1309,4 @@ var pureGrid = {
 }
 
 // create the grid as soon as the document is ready
-pureGrid.init.repeat(50);
+pureGrid.init.repeat();
